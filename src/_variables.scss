@@ -1,0 +1,41 @@
+$col-bg: #0a0c10;
+$col-surface: #111318;
+$col-accent: #c8a84b;
+$col-red: #c94040;
+$col-border: #2a2f3a;
+$font-display: 'Orbitron', sans-serif;
+$font-mono: 'Share Tech Mono', monospace;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --col-bg:#0a0c10;
+  --col-surface:#111318;
+  --col-surface2:#181b22;
+  --col-border:#2a2f3a;
+  --col-border2:#3a4050;
+  --col-accent:#c8a84b;
+  --col-accent2:#e8c86c;
+  --col-accent-dim:rgba(200,168,75,0.12);
+  --col-red:#c94040;
+  --col-red-dim:rgba(201,64,64,0.15);
+  --col-green:#3a9e6a;
+  --col-green-dim:rgba(58,158,106,0.15);
+  --col-text:#e8e6e0;
+  --col-text2:#9a9590;
+  --col-text3:#5a5750;
+  --nav-h:clamp(48px,7vw,62px);
+  --font-display:'Orbitron',monospace;
+  --font-mono:'Share Tech Mono',monospace;
+  --font-body:'Inter',sans-serif;
+  --radius:6px;
+  --radius-lg:10px;
+  --transition:0.2s ease;
+  --pad-x:clamp(14px,4vw,32px);
+
+
+}

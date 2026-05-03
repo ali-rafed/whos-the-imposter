@@ -1,0 +1,60 @@
+.container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #111318;
+  border: 1px solid #2a2f3a;
+  border-radius: 8px;
+}
+.container .title {
+  font-family: "Orbitron", sans-serif;
+  color: #c8a84b;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.inputRow input {
+  flex: 1;
+  background: #0a0c10;
+  border: 1px solid #2a2f3a;
+  color: #fff;
+  padding: 12px;
+  font-family: "Share Tech Mono", monospace;
+}
+.inputRow input:focus {
+  outline: 1px solid #c8a84b;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+.list .playerItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(200, 168, 75, 0.05);
+  border-left: 3px solid #c8a84b;
+}
+.list .playerItem span {
+  font-family: "Share Tech Mono", monospace;
+  color: #e8e6e0;
+}
+.list .playerItem button {
+  background: transparent;
+  border: none;
+  color: #c94040;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.list .playerItem button:hover {
+  color: #fff;
+}/*# sourceMappingURL=PlayerRoster.css.map */

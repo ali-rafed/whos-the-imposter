@@ -1,0 +1,20 @@
+      <div className={`role-card ${revealed ? 'revealed' : ''}`} onClick={() => setRevealed(!revealed)}>
+        <div className="card-inner">
+          {/* FRONT: Hidden State */}
+          {!revealed ? (
+            <div className="card-front">
+              <span className="player-name">{playerName}</span>
+              <p>Tap to reveal role</p>
+            </div>
+          ) : (
+            /* BACK: Revealed State */
+            <div className="card-back">
+              <h3 className={isImposter ? 'text-danger' : 'text-success'}>
+                {isImposter ? "YOU ARE THE IMPOSTER" : "YOU ARE AN AGENT"}
+              </h3>
+              <p className="secret-word">{isImposter ? "???" : secretWord}</p>
+              <p className="tap-again">Tap to hide</p>
+            </div>
+          )}
+        </div>
+      </div>

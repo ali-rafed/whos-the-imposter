@@ -1,0 +1,17 @@
+@use './variables' as *;
+/* ── VOTE ──────────────────────────────────────────── */
+.vote-option{display:flex;align-items:center;gap:clamp(8px,2vw,14px);padding:clamp(10px,2vw,14px) clamp(12px,2.5vw,18px);background:var(--col-surface);border:1px solid var(--col-border);border-radius:var(--radius);margin-bottom:8px;cursor:pointer;transition:var(--transition);
+  &:hover{border-color:var(--col-accent);background:var(--col-accent-dim);}
+  &.selected{border-color:var(--col-accent);background:var(--col-accent-dim);}
+  & .vname{flex:1;font-size:clamp(13px,2vw,15px);}
+}
+.vote-bar{height:4px;background:var(--col-border);border-radius:2px;margin-top:6px;overflow:hidden;}
+.vote-bar-fill{height:100%;background:var(--col-accent);border-radius:2px;transition:width 0.4s ease;}
+.voter-section{margin-bottom:clamp(16px,3vw,24px);}
+.voter-name{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,12px);letter-spacing:2px;color:var(--col-accent);margin-bottom:clamp(8px,1.5vw,12px);}
+.votes-needed{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,11px);color:var(--col-text3);margin-bottom:clamp(8px,1.5vw,12px);}
+
+/* ── REVEAL ────────────────────────────────────────── */
+.reveal-box{text-align:center;padding:clamp(20px,4vw,36px) 0;}
+.reveal-name{font-family:var(--font-display);font-size:clamp(18px,4.5vw,34px);font-weight:900;margin:clamp(10px,2vw,16px) 0 6px;}
+.reveal-verdict{font-size:clamp(12px,2vw,15px);color:var(--col-text2);margin-bottom:clamp(16px,3vw,26px);}

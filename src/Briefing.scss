@@ -1,0 +1,27 @@
+@use './variables' as *;
+.container {
+  text-align: center;
+  padding: 2rem;
+
+  .card {
+    height: 250px;
+    background: $col-surface;
+    border: 2px dashed $col-border;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.open {
+      border-style: solid;
+      border-color: $col-accent;
+      background: rgba($col-accent, 0.1);
+      color: $col-accent;
+      box-shadow: inset 0 0 20px rgba($col-accent, 0.2);
+    }
+  }
+}

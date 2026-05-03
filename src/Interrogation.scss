@@ -1,0 +1,9 @@
+@use './variables' as *;
+/* ── QUESTION PAGE ─────────────────────────────────── */
+.q-pair{
+ margin-bottom:clamp(12px,2.5vw,18px);
+  .q-asker{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,12px);letter-spacing:2px;color:var(--col-accent);margin-bottom:4px;}
+  .q-target{font-size:clamp(16px,3.5vw,22px);font-weight:600;color:var(--col-text);}
+}
+.free-q-box{background:var(--col-surface2);border:1px solid var(--col-border2);border-radius:var(--radius-lg);padding:clamp(14px,3vw,22px);margin-top:clamp(14px,3vw,22px);}
+.free-q-title{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,12px);letter-spacing:2px;color:var(--col-text2);margin-bottom:10px;}

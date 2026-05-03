@@ -1,0 +1,25 @@
+@use './variables' as *;
+/* ── GM PANEL ──────────────────────────────────────── */
+.gm-panel{background:var(--col-surface);border:1px solid var(--col-accent);border-radius:var(--radius-lg);padding:clamp(16px,3vw,24px);margin-bottom:clamp(14px,3vw,20px);
+  .gm-label{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,11px);letter-spacing:3px;color:var(--col-accent);margin-bottom:clamp(10px,2vw,14px);}
+  .gm-select-row{display:flex;flex-wrap:wrap;gap:clamp(8px,2vw,12px);margin-bottom:clamp(10px,2vw,14px);
+    &>div{flex:1;min-width:clamp(120px,30vw,160px);}
+     label{font-size:clamp(10px,1.8vw,12px);color:var(--col-text2);display:block;margin-bottom:5px;}
+  }
+.gm-player-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(100px,25vw,150px),1fr));gap:8px;margin-bottom:12px;
+  .gm-player-btn{padding:clamp(7px,1.5vw,10px) clamp(10px,2vw,14px);background:var(--col-surface2);border:1px solid var(--col-border);border-radius:var(--radius);font-size:clamp(11px,1.8vw,13px);color:var(--col-text);cursor:pointer;transition:var(--transition);text-align:center;
+    &.selected-imp{border-color:var(--col-red);color:var(--col-red);background:var(--col-red-dim);}
+    &:hover:not(.selected-imp){border-color:var(--col-red);}
+    &.active {
+      background: var(--col-red); 
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+    }
+  }
+}
+
+
+#gm-imp-count{
+  margin-inline-end: 30%;
+}
+}

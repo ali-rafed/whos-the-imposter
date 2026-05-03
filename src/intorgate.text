@@ -1,0 +1,62 @@
+shifteing indeex
+
+
+import React, { useState, useEffect } from 'react';
+import { useGameStore } from './useGameStore';
+import HeadLine from './HeadLine';
+import { useLang } from './useLang';
+import "./Interrogation.scss"
+ const Interrogation = () => {
+  const { players, setPage, } = useGameStore();
+ const {lang}=useLang()
+  const [qPairs, setQPairs] = useState([]);
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  // Replicates your logic for generating random pairs
+  useEffect(() => {
+    const pairs = [];
+    const n = players.length;
+    for (let i = 0; i < n; i++) {
+      let target = (i + 1) % n;
+      pairs.push({ asker: players[i].name, target: players[target].name });
+    }
+    setQPairs(pairs);
+  }, [players]);
+
+  const isLast = currentIdx >= qPairs.length - 1;
+
+  return (
+    <div className='page'>
+    <HeadLine lang={lang}/>
+    <p class="sub" id="q-sub">Each pair: the asker questions the answerer about the secret word.</p>
+    <div className="">
+      {qPairs[currentIdx] && (
+        <>
+      <div class="q-pair card">
+        <div class="q-asker">{qPairs[currentIdx].asker} asks {qPairs[currentIdx].target}</div>
+        <div class="q-target">{qPairs[currentIdx].target}</div>
+      </div>
+      <div class="alert alert-info mb16">Each pair: the asker questions the answerer about the secret word.</div>
+      <div class="flex gap8 flex-wrap mt8">
+        
+      <button class="btn btn-primary" onClick={() => isLast ? setPage('tribunal') : setCurrentIdx(currentIdx + 1)}>
+            {isLast ? 'GO TO VOTE' : 'DONE — NEXT PAIR →'}
+          </button>
+          <span class="badge badge-accent" style={{alignSelf:"center"}} >1/3</span>
+      </div>
+      <div style={{marginTop:'20px',display:'flex',flexWrap:'wrap',gap:"6px"}}>
+        <span class="badge badge-accent"
+        style={{opacity:true?'0.4':"1"}}
+         >m,jkj→jkk
+         </span>
+         
+      </div>
+         
+        </>
+      )}
+    </div>
+    </div>
+  );
+};
+
+export default Interrogation

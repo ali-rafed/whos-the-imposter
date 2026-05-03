@@ -1,0 +1,62 @@
+@use './variables' as *;
+
+
+.navbar {
+  // position: fixed;
+  // top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(10, 12, 16, 0.95);
+  border-bottom: 1px solid var(--col-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad-x);
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  .brand {
+    font-family:var(--font-display);
+    font-size:clamp(8px,1.8vw,12px);
+    letter-spacing:clamp(1px,0.5vw,3px);
+    color:var(--col-accent);
+    text-transform:uppercase;
+    cursor:pointer;
+    user-select:none;
+  }
+
+  .right {
+    display:flex;
+    align-items:center;
+    gap:clamp(6px,2vw,14px);
+
+    .dots {
+      display: flex;
+      gap:clamp(4px,1vw,8px);
+      .dot {
+        width:clamp(6px,1.2vw,9px);
+  height:clamp(6px,1.2vw,9px);
+  border-radius:50%;
+  border:1px solid var(--col-border2);
+  background:transparent;
+  cursor:pointer;
+  transition:var(--transition);
+        &.active { background: var(--col-accent); border-color: var(--col-accent); }
+        &.done{background:var(--col-border2);border-color:var(--col-border2);}
+      }
+    }
+  }
+  .langBtn {
+    font-family:var(--font-mono);
+    font-size:clamp(9px,1.5vw,12px);
+    color:var(--col-text2);
+    background:transparent;
+    border:1px solid var(--col-border);
+    padding:clamp(3px,0.6vw,5px) clamp(7px,1.5vw,12px);
+    border-radius:var(--radius);
+    cursor:pointer;
+    transition:var(--transition);
+    &:hover { border-color: var(--col-accent); color: var(--col-accent); }
+  }
+}
+
+// .done{background:var(--col-border2);border-color:var(--col-border2);}
+

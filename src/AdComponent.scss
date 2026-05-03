@@ -1,0 +1,43 @@
+:root {
+    --ad-bg: rgba(255, 255, 255, 0.03);
+    --ad-border: #2a2f3a;
+    --ad-radius: 8px;
+    --ad-label-color: #5a5750;
+    --ad-label-size: 9px;
+  }
+  
+  .ad-slot {
+    flex: 1; // This centers the ad between the logo and the buttons
+    max-width: 468px; 
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+  
+    .ad-content {
+      width: 100%;
+      border: 1px dashed var(--ad-border); // Dashed border helps you see the slot while testing
+      background: var(--ad-bg);
+      border-radius: var(--ad-radius);
+      text-align: center;
+      padding: 5px;
+  
+      &::before {
+        content: attr(data-label);
+        display: block;
+        font-size: var(--ad-label-size);
+        color: var(--ad-label-color);
+        text-transform: uppercase;
+        margin-bottom: 2px;
+      }
+    }
+  }
+.ad-slot-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50; // Keep it above content but below Navbar (which is usually 100)
+    background: var(--col-bg); 
+    padding: 10px 0;
+    border-top: 1px solid var(--col-border);
+  }

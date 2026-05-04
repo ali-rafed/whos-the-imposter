@@ -54,7 +54,7 @@ export function RoleCard({ players, secretWord, isImposter  }) {
       </div>
         }
 
-      {revealed ?
+      {!revealed ?
         <p className="sub mt12" id="role-hint" style={{fontSize:"clamp('11px','1.8vw','13px')"}}>{t[lang].roRevealBtn}</p>
         :
       <button className="btn btn-outline mt12 " id="role-hide-btn" onClick={()=>nextRoleRevea()}>{t[lang].roHideBtn}</button>

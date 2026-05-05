@@ -1,7 +1,10 @@
 @use './variables' as *;
 /* ── VOTE ──────────────────────────────────────────── */
 .vote-option{display:flex;align-items:center;gap:clamp(8px,2vw,14px);padding:clamp(10px,2vw,14px) clamp(12px,2.5vw,18px);background:var(--col-surface);border:1px solid var(--col-border);border-radius:var(--radius);margin-bottom:8px;cursor:pointer;transition:var(--transition);
+  @media (hover: hover) {
+
   &:hover{border-color:var(--col-accent);background:var(--col-accent-dim);}
+  }
   &.selected{border-color:var(--col-accent);background:var(--col-accent-dim);}
   & .vname{flex:1;font-size:clamp(13px,2vw,15px);}
 }

@@ -3,7 +3,7 @@ import { useGameStore } from './useGameStore';
 import './App.scss'
 // Global Layout
 import Navbar from './Navbar';
-// import AdComponent from './AdComponent';
+import AdComponent from './AdComponent';
 // Pages only
 import Home from './Home';
 import Setup from './Setup';
@@ -36,6 +36,7 @@ const [isReady, setIsReady] = useState(false);
 
   if (!isReady) return null; // Or a loading spinner
   return (
+    
     <div  className="app-container">
       {/* 1. The visual overlay from your HTML */}
       <div className="scanlines7" />
@@ -48,9 +49,7 @@ const [isReady, setIsReady] = useState(false);
       </main>
 
       {/* 3. Global Ad Slot footer as seen in your file */}
-      <div className="ad-slot" id="global-footer-ad">
-         {/* Your Ad Component here */}
-      </div>
+         <AdComponent key={currentPage} />
 
     </div>
   );

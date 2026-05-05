@@ -1,43 +1,105 @@
-:root {
-    --ad-bg: rgba(255, 255, 255, 0.03);
-    --ad-border: #2a2f3a;
-    --ad-radius: 8px;
-    --ad-label-color: #5a5750;
-    --ad-label-size: 9px;
+@use './variables' as *;
+
+  :root
+  {
+      /* AD SLOT VARIABLES — edit these to style your ad banners */
+  --ad-bg:transparent;
+  --ad-border:transparent;
+  --ad-radius:8px;
+  --ad-min-h:0px;         /* stays 0 when empty so it takes no space */
+  --ad-label-color:var(--col-text3);
+  --ad-label-size:9px;
   }
+//   .ad-slot {
+//     flex: 1; // This centers the ad between the logo and the buttons
+//     max-width: 468px; 
+//     margin: 0 20px;
+//     display: flex;
+//     justify-content: center;
   
-  .ad-slot {
-    flex: 1; // This centers the ad between the logo and the buttons
-    max-width: 468px; 
-    margin: 0 20px;
-    display: flex;
-    justify-content: center;
+//     .ad-content {
+//       width: 100%;
+//       border: 1px dashed var(--ad-border); // Dashed border helps you see the slot while testing
+//       background: var(--ad-bg);
+//       border-radius: var(--ad-radius);
+//       text-align: center;
+//       padding: 5px;
   
-    .ad-content {
-      width: 100%;
-      border: 1px dashed var(--ad-border); // Dashed border helps you see the slot while testing
-      background: var(--ad-bg);
-      border-radius: var(--ad-radius);
-      text-align: center;
-      padding: 5px;
-  
-      &::before {
-        content: attr(data-label);
-        display: block;
-        font-size: var(--ad-label-size);
-        color: var(--ad-label-color);
-        text-transform: uppercase;
-        margin-bottom: 2px;
-      }
-    }
-  }
-.ad-slot-bottom {
-    position: fixed;
+//       &::before {
+//         content: attr(data-label);
+//         display: block;
+//         font-size: var(--ad-label-size);
+//         color: var(--ad-label-color);
+//         text-transform: uppercase;
+//         margin-bottom: 2px;
+//       }
+//     }
+//   }
+// .ad-slot-bottom {
+//     // position: fixed;
+//     // bottom: 0;
+//     // left: 0;
+//     // right: 0;
+//     z-index: 50; // Keep it above content but below Navbar (which is usually 100)
+//     background: var(--col-bg); 
+//     padding: 10px 0;
+//     border-top: 1px solid var(--col-border);
+//   }
+
+
+.ad-slot {
+  position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 50; // Keep it above content but below Navbar (which is usually 100)
-    background: var(--col-bg); 
-    padding: 10px 0;
-    border-top: 1px solid var(--col-border);
-  }
+
+  width:100%;
+  background: var(--ad-bg);
+  border-radius: var(--ad-radius);
+  overflow: hidden;
+  /* empty by default — no space, no border, invisible */
+  pointer-events: none;    /* wrapper never intercepts any click */
+  user-select: none;
+  z-index: 1;              /* well below nav z-index:100 */
+
+  /* Margins for in-page slots so game content breathes */
+&.ad-slot-top    { margin-bottom: clamp(12px, 2.5vw, 20px);  }
+&.ad-slot-bottom { margin-top:    clamp(12px, 2.5vw, 20px); }
+&.ad-slot-mid    { margin: clamp(14px, 3vw, 22px) 0; }
+&.ad-slot:empty {
+  display: none;           /* truly gone when nothing inside */
+}
+.ad-content {
+  pointer-events: auto;    /* re-enable only for the actual ad */
+  border: 1px solid var(--ad-border);
+  border-radius: var(--ad-radius);
+  overflow: hidden;
+  background: var(--ad-bg);
+  
+  height: var(--nav-h);
+  /* Small "advertisement" label above each filled slot */
+//   &::before {
+//   content: attr(data-label);
+//   display: block;
+//   font-family: var(--font-mono);
+//   font-size: var(--ad-label-size);
+//   letter-spacing: 2px;
+//   color: var(--ad-label-color);
+//   text-align: center;
+//   padding: 4px 0 2px;
+//   text-transform: uppercase;
+// }
+
+.ad-placeholder{
+    width: 100%;
+    border: 0px;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent ;
+}
+}
+}
+#frame{
+  width: 100%;margin: auto;position: relative; z-index: 99998;
+}
+iframe{
+  border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto
+}

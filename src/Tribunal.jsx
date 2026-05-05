@@ -45,10 +45,22 @@ const Tribunal = () => {
 
   const toggleVote = (targetIdx) => {
     if (selectedIndices.includes(targetIdx)) {
+      // If clicking an already selected person, unselect them
       setSelectedIndices(selectedIndices.filter(id => id !== targetIdx));
     } else {
       if (selectedIndices.length < numImposters) {
+        // If we haven't reached the limit, just add them
         setSelectedIndices([...selectedIndices, targetIdx]);
+      } else {
+        // LIMIT REACHED: "Instant Change" Logic
+        if (numImposters === 1) {
+          // Simple case: Just replace the single vote
+          setSelectedIndices([targetIdx]);
+        } else {
+          // Multi-vote case: Remove the first person selected and add the new one
+          const shifted = [...selectedIndices.slice(1), targetIdx];
+          setSelectedIndices(shifted);
+        }
       }
     }
   };

@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .app-container {
-  background: var(--col-bg);
+  background: red;
   color: var(--col-text);
   font-family: var(--font-body);
   min-height: 100vh;

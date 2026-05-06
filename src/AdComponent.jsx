@@ -8,12 +8,14 @@ const AdComponent = ({ position = "bottom", label = "Advertisement" }) => {
   return (
     <div className={`ad-slot ad-slot-${position}`}>
       <div className="ad-content" data-label={label}>
-
-<div id="frame" >
-          <iframe data-aa='2436773' src='//acceptable.a-ads.com/2436773/?size=Adaptive'
-            ></iframe>
+      <div id="frame" >
+      <iframe 
+          data-aa={adId} 
+          // Using 'Adaptive' size as provided in your snippet
+          src={`https://acceptable.a-ads.com/${adId}/?size=Adaptive`} 
+          title="A-Ads"
+        ></iframe>
         </div>
-
       </div>
     </div>
   );

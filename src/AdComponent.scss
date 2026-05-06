@@ -101,5 +101,6 @@
   width: 100%;margin: auto;position: relative; z-index: 99998;
 }
 iframe{
-  border:0; padding:0; width:70%; height:var(--nav-h); overflow:hidden;display: block;margin: auto
-}
+  border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto;
+     height:var(--nav-h); 
+    }

@@ -82,17 +82,7 @@ const Tribunal = () => {
     }
   };
 
-  // const isImposterCaught = () => {
-  //   // Logic: If the top voted people include ANY actual imposters
-  //   const sortedVotes = Object.entries(voteCounts)
-  //     .sort((a, b) => b[1] - a[1]) // Sort by most votes
-  //     .slice(0, numImposters) // Take the top candidates
-  //     .map(entry => parseInt(entry[0]));
 
-  //   // Civilians win if they successfully voted out ALL imposters (or at least one, depending on your rules)
-  //   // Here: Check if all identified top-voted people are in the imposter list
-  //   return sortedVotes.every(idx => imposterIdxs.includes(idx));
-  // };
 
   if (revealed) {
     // const win = isImposterCaught();

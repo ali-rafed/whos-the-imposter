@@ -10,6 +10,7 @@ import Setup from './Setup';
 import Briefing from './Briefing';
 import Interrogation from './Interrogation';
 import Tribunal from './Tribunal';
+
 // ... import your other components
 
 function App() {

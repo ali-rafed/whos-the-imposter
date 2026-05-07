@@ -85,7 +85,6 @@ const Tribunal = () => {
 
 
   if (revealed) {
-    // const win = isImposterCaught();
     return (
       <Reveal voteCounts={voteCounts}/>
     );
@@ -94,6 +93,7 @@ const Tribunal = () => {
   return (
     <div >
       <HeadLine lang={lang}/>
+      <p>{players[voterIdx].name}</p>
       <p className="sub">{currentT.vVotesNeeded(numImposters)}</p>
 
       <div className="voter-section mt16">
@@ -102,13 +102,18 @@ const Tribunal = () => {
           const isSelected = selectedIndices.includes(i);
           
           return (
-            <div 
+            <div
+            
               key={p.id} 
+             >
+            
+            <div 
               className={`vote-option ${isSelected ? 'selected' : ''}`}
               onClick={() => toggleVote(i)}
             >
               <span className="vname">{p.name}</span>
               {isSelected && <span className="badge badge-accent">VOTED</span>}
+            </div>
             </div>
           );
         })}

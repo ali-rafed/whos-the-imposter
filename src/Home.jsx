@@ -14,7 +14,7 @@ export default function Home() {
   const t = {
     en: { 
       hTag:'// CLASSIFIED OPERATION',hTitle1:"Who's The",hTitle2:'Imposter?',
-    hSub:'A pass-and-play social deduction game. Everyone gets a secret word — except the moles. Find them before they escape .',
+    hSub:"A pass-and-play social deduction game. Everyone gets a secret word — except the moles. Who's them before they escape .",
     f1t:'Hidden Moles',f1d:'One or more players get no word and must bluff.',
     f2t:'Question Rounds',f2d:'Players question each other. Listen for cracks.',
     f3t:'Vote & Reveal',f3d:'Vote for suspects. Majority decides the fate.',
@@ -23,11 +23,11 @@ export default function Home() {
   },
     ar: { 
     hTag:'// عملية سرية',hTitle1:'من هو ' ,hTitle2:'العميل المزدوج؟',
-    hSub:'لعبة تمرير اجتماعية. الجميع يحصل على كلمة سرية — إلا العملاء المزدوجين. اكشفهم قبل أن يهربوا.',
+    hSub:' لعبة تمرير اجتماعية. الجميع يحصل على كلمة سرية — إلا العملاء السريين. اعثر عليهم قبل ان يهربوا.',
     f1t:'عملاء مزدوجون',f1d:'لاعب أو أكثر لا يعرفون الكلمة، عليهم الإيهام.',
     f2t:'جولات الأسئلة',f2d:'اللاعبون يسألون بعضهم. استمع للتناقضات.',
     f3t:'تصويت وكشف',f3d:'صوّت للمشتبه بهم. الأغلبية تقرر.',
-    f4t:'مدير اللعبة',f4d:'المدير الاختياري يختار الكلمة والعملاء المزدوجين.',
+    f4t:'مدير اللعبة',f4d:'المدير الاختياري يختار الكلمة والعملاء السريين.',
     hStart:'ابدأ المهمة ←',hHint:'مرّر الجهاز للاعب الأول'
   }
   };

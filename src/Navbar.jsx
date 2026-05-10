@@ -25,6 +25,7 @@ const Navbar = () => {
         {/* <AdComponent position='left' ></AdComponent> */}
 
         <div className='right'>
+
           <div className='dots'> 
             {steps.map((item , i) => (
               
@@ -33,6 +34,11 @@ const Navbar = () => {
                {`dot ${currentPage === item ? 'active' : ''} ${steps.indexOf(currentPage) > i ? 'done' : ''}`} />
             ))}
           </div>
+          <button 
+            className='btn langBtn'
+            onClick={() => setPage('about')}
+            
+          >{lang !== 'en' ? 'عنا' : 'about us'}</button>
           <button className='langBtn' onClick={() => toggleLang()}>
             {lang === 'en' ? 'عربي' : 'English'}
           </button>

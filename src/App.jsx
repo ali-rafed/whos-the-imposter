@@ -10,6 +10,7 @@ import Setup from './Setup';
 import Briefing from './Briefing';
 import Interrogation from './Interrogation';
 import Tribunal from './Tribunal';
+import AppCredits from './AppCredits';
 
 // ... import your other components
 
@@ -27,6 +28,7 @@ const [isReady, setIsReady] = useState(false);
       case 'briefing':      return <Briefing />;
       case 'interrogation': return <Interrogation />;
       case 'tribunal':      return <Tribunal />;
+      case 'about':      return <AppCredits />;
       default:              return <Home />;
     }
   };

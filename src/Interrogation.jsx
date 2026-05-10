@@ -40,8 +40,8 @@ const Interrogation = () => {
 
   // Translation helpers
   const t = {
-    en: { next: "NEXT PAIR →", vote: "GO TO VOTE", asks: "asks",arr:"←"},
-    ar: { next: "الزوج التالي ←", vote: "ذهاب للتصويت", asks: "يسأل" ,arr:"→"}
+    en: { next: "NEXT PAIR →", vote: "GO TO VOTE", asks: "asks",arr:"→"},
+    ar: { next: "الزوج التالي ←", vote: "ذهاب للتصويت", asks: "يسأل" ,arr:"←"}
   };
 
   return (
@@ -54,8 +54,8 @@ const Interrogation = () => {
             {/* The Current Pair Display */}
             <div className="q-pair card">
               <div className="q-asker">
-                <span className="name-highlight">{qPairs[currentIdx].asker}</span> 
-                {" "}{t[lang].asks}{" "}
+              <span className="name-highlight">{qPairs[currentIdx].asker}</span> 
+                {" "}<span className="asks-label">{t[lang].asks}</span>{" "}
                 <span className="name-highlight">{qPairs[currentIdx].target}</span>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Interrogation = () => {
                   className={`badge ${i === currentIdx ? 'badge-accent' : i <currentIdx ? "badge-green": ""}`}
                   style={{ opacity: i > currentIdx ? 0.4 : 1 }}
                 >
-                  {pair.asker} → {pair.target}
+                  {pair.asker} {t[lang].arr} {pair.target}
                 </span>
               ))}
             </div>

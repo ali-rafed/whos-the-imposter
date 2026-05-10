@@ -1,9 +1,53 @@
 @use './variables' as *;
-/* ── QUESTION PAGE ─────────────────────────────────── */
-.q-pair{
- margin-bottom:clamp(12px,2.5vw,18px);
-  .q-asker{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,12px);letter-spacing:2px;color:var(--col-accent);margin-bottom:4px;}
-  .q-target{font-size:clamp(16px,3.5vw,22px);font-weight:600;color:var(--col-text);}
+
+.interrogation-container {
+  max-width: 600px;
+  margin: 0 auto;
+  
+  .q-pair {
+    padding: clamp(20px, 5vw, 30px);
+    text-align: center;
+    border: 2px solid var(--col-border);
+    background: rgba(var(--col-surface-rgb), 0.5);
+    
+    .q-asker {
+      font-size: clamp(16px, 4vw, 24px);
+      font-weight: 700;
+      line-height: 1.4;
+      
+      .name-highlight {
+        color: var(--col-accent);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--col-accent);
+      }
+      
+      .asks-label {
+        font-family: var(--font-mono);
+        font-size: 0.7em;
+        color: var(--col-text3);
+        text-transform: uppercase;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .alert-info {
+    font-size: 0.9rem;
+    border-left: 3px solid var(--col-accent);
+    background: rgba(0, 212, 255, 0.05);
+    padding: 12px;
+    color: var(--col-text2);
+    
+    &.rtl {
+      border-left: none;
+      border-right: 3px solid var(--col-accent);
+    }
+  }
+
+  // Chain Badges
+  .badge-green {
+    background-color: #2ecc7122;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+  }
 }
-.free-q-box{background:var(--col-surface2);border:1px solid var(--col-border2);border-radius:var(--radius-lg);padding:clamp(14px,3vw,22px);margin-top:clamp(14px,3vw,22px);}
-.free-q-title{font-family:var(--font-mono);font-size:clamp(9px,1.5vw,12px);letter-spacing:2px;color:var(--col-text2);margin-bottom:10px;}
